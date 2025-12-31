@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎊 Happy New Year 2026 🎊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&family=Charmonman:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            overflow: hidden; background-color: #000;
+            font-family: 'Kanit', sans-serif;
+        }
+        #bgVideo {
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            z-index: -1; object-fit: cover;
+            filter: brightness(0.5);
+        }
+        #overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #1a1a2e; z-index: 1000;
+            display: flex; justify-content: center; align-items: center; transition: 0.8s;
+        }
+        .start-btn {
+            padding: 20px 40px; font-size: 1.5rem; color: white;
+            background: linear-gradient(45deg, #ff4d4d, #f9cb28);
+            border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 0 20px rgba(249, 203, 40, 0.5);
+        }
+        .content {
+            position: relative; z-index: 10;
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; color: white; opacity: 0; transition: 2s;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+        }
+        h1 {
+            font-family: 'Charmonman', cursive;
+            font-size: 4rem; margin: 0;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+        .wish-text {
+            font-weight: 300; font-size: 1.5rem;
+            margin: 15px 0; line-height: 1.6; color: #fff;
+        }
+        .photo-container {
+            display: flex; gap: 15px; margin-top: 25px; justify-content: center;
+        }
+        .card-photo {
+            width: 160px; height: 200px;
+            object-fit: cover; border: 3px solid white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            transition: 0.3s;
+        }
+        .card-photo:hover { transform: scale(1.05) rotate(2deg); }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+            .wish-text { font-size: 1.1rem; }
+            .card-photo { width: 120px; height: 160px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay">
+        <button class="start-btn" onclick="startExperience()">เปิดการ์ดอวยพรให้พี่ๆ 🧧</button>
+    </div>
+
+    <video playsinline loop id="bgVideo">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-fireworks-illuminating-the-night-sky-41590-large.mp4" type="video/mp4">
+    </video>
+
+    <div class="content" id="mainContent">
+        <h1>Happy New Year 2026</h1>
+        <div class="wish-text">
+            ขออวยพรให้พี่สาวทุกคน<br>
+            มีแต่ความสุข ความเจริญ และสุขภาพแข็งแรงตลอดปีใหม่นี้<br>
+            <span style="color: #ffd700;">✨ จากใจของไอ้น้องชายคนนี้ ✨</span>
+        </div>
+        <div class="photo-container">
+            <img src="https://i.ibb.co/99Cp8mcK/4-F650289-320-F-477-E-AD93-961-B4-A94-B56-C.jpg" class="card-photo">
+            <img src="https://i.ibb.co/3KVxWKy/9-CEC6341-62-BB-428-A-B331-08-E306-BED3-AB.jpg" class="card-photo">
+        </div>
+    </div>
+
+    <script>
+        function startExperience() {
+            document.getElementById('bgVideo').play();
+            document.getElementById('overlay').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('mainContent').style.opacity = '1';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
